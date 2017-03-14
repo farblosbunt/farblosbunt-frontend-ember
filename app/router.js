@@ -7,6 +7,10 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
+  this.route('index');
+  this.route('query', {path: 'r/:query'});
+  this.route('privacy');
+  this.route('terms');
 });
 
 export default Router;
