@@ -1,10 +1,2 @@
-p hello
-
-.container
-  .row
-    .col6
-      |col6
-    .col6
-      |col6
-
-==outlet
+p application
+== liquid-outlet

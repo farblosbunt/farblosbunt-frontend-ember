@@ -40,6 +40,7 @@
     "ember-load-initializers": "^0.6.0",
     "ember-resolver": "^2.0.3",
     "ember-source": "^2.11.0",
+    "liquid-fire": "0.27.1",
     "loader.js": "^4.0.10"
   },
   "engines": {

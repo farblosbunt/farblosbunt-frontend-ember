@@ -7,8 +7,8 @@ const Router = Ember.Router.extend({
 });
 
 Router.map(function() {
-  this.route('index');
-  this.route('query', {path: 'r/:query'});
+  this.route('index', {path: '/'});
+  this.route('results', {path: 'r/:tag_id'});
   this.route('privacy');
   this.route('terms');
 });

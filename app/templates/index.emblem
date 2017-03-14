@@ -1,0 +1,4 @@
+p index
+
+=input type="number" value=offset
+=input type="text" value=queryString
