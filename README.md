@@ -7,41 +7,38 @@ A short introduction of this app could easily go here.
 
 You will need the following things properly installed on your computer.
 
+Most importantly:
+* brew
 * [Git](https://git-scm.com/)
 * [Node.js](https://nodejs.org/) (with NPM)
+
+The bootstrap script will install additional dependencies
+
 * [Bower](https://bower.io/)
 * [Ember CLI](https://ember-cli.com/)
-* [PhantomJS](http://phantomjs.org/)
+* [Foreman](https://www.theforeman.org/)
 
 ## Installation
 
 * `git clone <repository-url>` this repository
 * `cd farblosbunt-frontend-ember`
-* `npm install`
-* `bower install`
+* `sh bootstrap.sh`
 
 ## Running / Development
 
-* `ember serve`
+* `foreman start`
 * Visit your app at [http://localhost:4200](http://localhost:4200).
 
-### Code Generators
-
-Make use of the many generators for code, try `ember help generate` for more details
-
-### Running Tests
-
-* `ember test`
-* `ember test --server`
 
 ### Building
 
-* `ember build` (development)
 * `ember build --environment production` (production)
+Then copy the contents of ./dist to your webspace / cdn
+
 
 ### Deploying
 
-Specify what it takes to deploy your app.
+#TODO
 
 ## Further Reading / Useful Links
 
@@ -49,4 +46,3 @@ Specify what it takes to deploy your app.
 * [ember-cli](https://ember-cli.com/)
 * Development Browser Extensions
   * [ember inspector for chrome](https://chrome.google.com/webstore/detail/ember-inspector/bmdblncegkenkacieihfhpjfppoconhi)
-  * [ember inspector for firefox](https://addons.mozilla.org/en-US/firefox/addon/ember-inspector/)
