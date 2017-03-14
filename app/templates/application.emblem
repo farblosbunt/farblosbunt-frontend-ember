@@ -1,0 +1,10 @@
+p hello
+
+.container
+  .row
+    .col6
+      |col6
+    .col6
+      |col6
+
+==outlet

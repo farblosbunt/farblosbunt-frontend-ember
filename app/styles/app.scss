@@ -1,0 +1,18 @@
+@import "bourbon";
+@import "neat";
+
+.row{
+  @include grid-container;
+}
+
+@for $i from 1 through 12{
+  .col#{$i}{
+    @include grid-column($i);
+  }
+}
+
+
+body, html{
+  margin: 0;
+  padding: 0;
+}
