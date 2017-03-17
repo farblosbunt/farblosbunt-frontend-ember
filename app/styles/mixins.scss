@@ -1,0 +1,23 @@
+
+@mixin prefix($properties) {
+  @each $prop, $value in $properties {
+    $prefixes: (moz webkit o ms);
+    @each $prefix in $prefixes {
+      #{'-' + $prefix + '-' + $prop}: $value;
+    }
+    #{$prop}: $value;
+  }
+}
+
+
+@mixin center-horizontal {
+  margin: 0 auto;
+}
+
+@mixin center-vertical {
+  display: flex;
+  @include prefix((
+    flex-direction: column,
+    justify-content: center
+  ));
+}

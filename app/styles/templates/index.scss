@@ -1,0 +1,83 @@
+.left-column, .right-column{
+  height: 100vh;
+  @include center-horizontal;
+  @include center-vertical;
+  width: calc(50% - 0px);
+  float: left;
+  margin-left: 0;
+
+  .container{
+    padding: 15% 15%;
+  }
+}
+
+.right-column{
+  background-color: $grey1;
+}
+
+@media #{$phone} {
+  .left-column, .right-column{
+    width: 100%;
+    height: 100%;
+    min-height: 100vh;
+  }
+  .left-column .container .search-tags{
+    width: 100%;
+  }
+  .right-column .container h1{
+    font-size: 42px;
+  }
+}
+
+
+.left-column .logo{
+  height: 150px;
+  width: auto;
+  margin: 0 auto;
+  display: block;
+}
+
+.left-column .search-tags {
+  @include center-horizontal;
+  width: 80%;
+  max-width: 350px;
+  padding: 40px 0;
+}
+.left-column .popular-tags {
+  margin-top: 2em;
+  text-align: center;
+}
+
+.left-column .popular-tags .chip{
+  display: inline-block;
+  background-color: $grey2;
+  padding: 0 12px;
+  height: 32px;
+  line-height: 32px;
+  margin: 0 4px 7px 3px;
+  text-transform: capitalize;
+  font-size: 18px;
+  font-weight: lighter;
+  text-align: center;
+  text-size-adjust: 100%;
+  cursor: pointer;
+  &:hover{
+    background-color: $red;
+    color: white;
+  }
+}
+
+
+
+
+.right-column{
+  text-align: center;
+  h1{
+    font-size: 63px;
+    line-height: 110%;
+    font-weight: normal;
+    span{ color: $red;}
+    margin: 2.1rem 0;
+  }
+
+}

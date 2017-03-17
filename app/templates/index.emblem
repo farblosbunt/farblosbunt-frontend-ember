@@ -1,5 +1,5 @@
-.left
+.left-column
   = partial "index-left"
 
-.right
+.right-column
   = partial "index-right"

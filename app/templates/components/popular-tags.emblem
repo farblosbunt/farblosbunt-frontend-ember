@@ -1,5 +1,6 @@
 = liquid-if fetchPopularTags.isRunning
-  p Loading
+  p Lade Tags…
+  = partial "loader"
 = else
   = each popularTags as |tag|
     .chip click="'selectTag' tag"

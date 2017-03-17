@@ -1,7 +1,12 @@
+@import "colors";
 @import "bourbon";
 @import "neat";
+@import "mixins";
 @import "./power-select";
-@import "ember-power-select";
+@import "defaults";
+
+@import "templates";
+@import "partials/loader";
 
 .row{
   @include grid-container;
@@ -11,10 +16,4 @@
   .col#{$i}{
     @include grid-column($i);
   }
-}
-
-
-body, html{
-  margin: 0;
-  padding: 0;
 }

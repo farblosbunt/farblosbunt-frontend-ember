@@ -1,0 +1,33 @@
+.row{
+  @include grid-container;
+}
+
+@for $i from 1 through 12{
+  .col#{$i}{
+    @include grid-column($i);
+  }
+}
+
+
+body, html{
+  margin: 0;
+  padding: 0;
+  color: #333;
+  line-height: 1.5;
+  font-size: 15px;
+  font-family: "Roboto",sans-serif;
+  font-weight: 400;
+  height: 100%;
+}
+
+body > .ember-view{
+  height: 100%;
+}
+
+.application{
+  height: 100%;
+}
+
+
+$phone: "only screen and (max-device-width: 480px)";
+$tablet: "only screen and (min-device-width: 481px) and (max-device-width: 768px)";

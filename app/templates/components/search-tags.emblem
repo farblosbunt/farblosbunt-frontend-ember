@@ -1,2 +1,2 @@
-= power-select search=(perform searchTagsTask) onchange=(action "selectTag") as |tag|
+= power-select-typeahead placeholder="SUCHE" searchPlaceholder="SUCHEN" loadingMessage="Suche…" noMatchesMessage="Keine Ergebnisse" search=(perform searchTagsTask) onchange=(action "selectTag") as |tag|
   = tag.label

@@ -25,7 +25,7 @@ export default function() {
 
   this.get('/popular-tags',(schema)=>{
     let result = schema.tags.where((tag)=>{
-      return [1,2,3,4].includes(parseInt(tag.id));
+      return [1,2,3,4,5,6].includes(parseInt(tag.id));
     });
     result.modelName = "popularTag";
     result.models.map((mdl)=>{

@@ -1,0 +1,71 @@
+$loaderItemSize: 40px;
+
+.loader {
+  margin: $loaderItemSize auto;
+  width: $loaderItemSize;
+  height: $loaderItemSize;
+  position: relative;
+  display: inline-block;
+  @include prefix((transform: rotateZ(45deg)));
+  @include prefix((transition: all 0.3s ease-in-out 0 ));
+
+  .l {
+    background-color: $grey4;
+    float: left;
+    width: 25%;
+    height: 25%;
+    position: relative;
+    background-color: white;
+    opacity: 1px;
+    @include prefix((transform: scale(0.8)));
+    @include prefix((animation: solly 4s infinite linear));
+    @include prefix((transform-origin: 100% 100%));
+  }
+
+  .l2, .l3, .l6, .l11, .l14, .l15{
+    @include prefix((animation: none));
+  }
+
+  $pu: 25ms;
+  .l1 {@include prefix((animation-delay: 0 * $pu ));}
+  .l5 {@include prefix((animation-delay: 1 * $pu ));}
+  .l9 {@include prefix((animation-delay: 2 * $pu ));}
+  .l13{@include prefix((animation-delay: 3 * $pu ));}
+  .l10{@include prefix((animation-delay: 4 * $pu ));}
+  .l7 {@include prefix((animation-delay: 5 * $pu ));}
+  .l4 {@include prefix((animation-delay: 6 * $pu ));}
+  .l8 {@include prefix((animation-delay: 7 * $pu ));}
+  .l12{@include prefix((animation-delay: 8 * $pu ));}
+  .l16{@include prefix((animation-delay: 9 * $pu ));}
+  // .l2 {@include prefix((animation-delay: 40 * $pu ));}
+  // .l3 {@include prefix((animation-delay: 40 * $pu ));}
+  // .l6 {@include prefix((animation-delay: 40 * $pu ));}
+  // .l11{@include prefix((animation-delay: 40 * $pu ));}
+  // .l14{@include prefix((animation-delay: 40 * $pu ));}
+  // .l15{@include prefix((animation-delay: 40 * $pu ));}
+
+
+}
+
+@-webkit-keyframes solly {
+  0% {
+    opacity: 0;
+    background-color: white;
+  }
+  1%, 50%{
+    opacity: 1;
+    background-color: $red;
+  }
+  51%, 66%{
+    opacity: 0;
+    background-color: white;
+  }
+  67%, 99%{
+    opacity: 1;
+    background-color: $grey4;
+  }
+  100%, 0% {
+    opacity: 0;
+    background-color: white;
+  }
+}

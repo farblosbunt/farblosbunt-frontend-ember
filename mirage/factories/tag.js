@@ -1,5 +1,8 @@
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  label(index){ return `tag ${index}: ${faker.name.firstName()}`;}
+  label(){
+    let fk = faker.name;
+    return `${fk.firstName()} ${fk.lastName()}`;
+  }
 });

@@ -1,11 +1,11 @@
-$ember-power-select-material-active-color: rgb(16, 108, 200) !default;
+$ember-power-select-material-active-color: $grey4 !default;
 
 $ember-power-select-default-border-radius: none;
 $ember-power-select-border-color: #9e9e9e;
 $ember-power-select-trigger-border: none;
 $ember-power-select-trigger-border-bottom: 1px solid #9e9e9e;
 $ember-power-select-active-trigger-border: none;
-$ember-power-select-active-trigger-border-bottom: 2px solid $ember-power-select-material-active-color;
+$ember-power-select-active-trigger-border-bottom: 1px solid $ember-power-select-material-active-color;
 
 $ember-power-select-dropdown-border: none;
 $ember-power-select-highlighted-color: inherit;
@@ -23,21 +23,29 @@ $ember-power-select-multiple-option-line-height: 2;
 @keyframes drop-fade-below {
   0%   {
     opacity: 0;
-    transform: translateY(-20px);
+    @include prefix((
+      transform: translateY(-20px)
+    ));
   }
   100% {
     opacity: 1;
-    transform: translateY(3px);
+    @include prefix((
+      transform: translateY(3px)
+    ));
   }
 }
 @keyframes drop-fade-above {
   0%   {
     opacity: 0;
-    transform: translateY(20px);
+    @include prefix((
+      transform: translateY(20px)
+    ));
   }
   100% {
     opacity: 1;
-    transform: translateY(-3px);
+    @include prefix((
+      transform: translateY(-3px)
+    ));
   }
 }
 .ember-basic-dropdown-content--below.ember-basic-dropdown--transitioning-in {
@@ -54,14 +62,34 @@ $ember-power-select-multiple-option-line-height: 2;
 .ember-basic-dropdown-content--above.ember-basic-dropdown--transitioning-out {
   animation: drop-fade-above .15s reverse;
 }
-.ember-power-select-placeholder {
-  transition: transform 0.2s, color 0.2s;
-  transform-origin: 0 0;
-  .ember-power-select-trigger--active & {
-    transform: scale(0.7) translateY(-10px);
-    color: $ember-power-select-material-active-color;
-  }
+.ember-power-select-typeahead-placeholder {
+  text-align: center;
+  font-size: 26px;
+  .ember-power-select-trigger--active & {}
 }
-
+div.ember-power-select-trigger {
+  padding: 0;
+}
+span.ember-power-select-status-icon{
+  display: none;
+}
+input.ember-power-select-typeahead-input, input.ember-power-select-search-input{
+  color: $grey4;
+  font-size: 26px;
+  text-align: center;
+  text-transform: uppercase;
+}
+.ember-power-select-option--search-message{
+  display: none;
+  text-align: center;
+}
+li.ember-power-select-option{
+  padding: 1em 1.5em;
+  text-align: center;
+}
+li.ember-power-select-option[aria-current="true"]{
+  background-color: $red;
+  color: white;
+}
 
 @import "ember-power-select";
