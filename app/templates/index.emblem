@@ -1,4 +1,5 @@
-p index
+.left
+  = partial "index-left"
 
-=input type="number" value=offset
-=input type="text" value=queryString
+.right
+  = partial "index-right"

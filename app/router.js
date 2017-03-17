@@ -8,7 +8,9 @@ const Router = Ember.Router.extend({
 
 Router.map(function() {
   this.route('index', {path: '/'});
-  this.route('results', {path: 'r/:tag_id'});
+  this.route('tag', {path:'t/:tag_id', resetNamespace: true}, function(){
+    this.route('index', {path: '/'});
+  });
   this.route('privacy');
   this.route('terms');
 });

@@ -1,2 +1,2 @@
-p application
-== liquid-outlet
+.application
+  == liquid-outlet

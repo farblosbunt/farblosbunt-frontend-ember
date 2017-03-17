@@ -1,0 +1,6 @@
+= liquid-if fetchPopularTags.isRunning
+  p Loading
+= else
+  = each popularTags as |tag|
+    .chip click="'selectTag' tag"
+      =tag.label

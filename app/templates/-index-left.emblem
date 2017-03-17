@@ -1,0 +1,5 @@
+= partial "logo"
+
+= search-tags onTagSelect="onTagSelect"
+
+= popular-tags onTagSelect="onTagSelect"
