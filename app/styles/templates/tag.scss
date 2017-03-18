@@ -120,10 +120,14 @@
     padding: 1em;
     margin: auto;
     display: block;
-    &.active{
-      background-color: $red;
-      color: white;
-    }
+  }
+  .l.active{
+    background-color: $red;
+    color: white;
+  }
+  .r.active{
+    background-color: $grey6;
+    color: white;
   }
 
 }
