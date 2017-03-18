@@ -3,25 +3,18 @@
 
 = popular-tags onTagSelect="onTagSelect" selected=model.tag
 
+= liquid-spacer use="crossFade"
+  = unless showBoth
+    = tag-column-switcher showRight=showRight
 
-= liquid-spacer
+= liquid-spacer growWidth=false
   .entries
-    .left-column
-      = liquid-bind model.left as |leftEntries|
-        = each leftEntries as |leftEntry|
-          p
-            img src=leftEntry.permalink_url
-          p
-            = leftEntry.side
-          p
-            = leftEntry.id
-    .right-column
-      = liquid-bind model.right as |rightEntries|
+    = liquid-if showBoth
+      = partial "tag/left-column"
+      = partial "tag/right-column"
 
-        = each rightEntries as |rightEntry|
-          p
-            img src=rightEntry.permalink_url
-          p
-            = rightEntry.side
-          p
-          = rightEntry.id
+    = else
+      = liquid-if showRight class="tag-show-right-column"
+        = partial "tag/right-column"
+      = else
+        = partial "tag/left-column"

@@ -1,0 +1,4 @@
+.l click="onLeft" class="{{if showRight 'inactive' 'active'}}"
+  | Links
+.r click="onRight" class="{{if showRight 'active' 'inactive'}}"
+  | Rechts

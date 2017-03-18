@@ -1,8 +1,11 @@
+
+
 .top-bar .inner{
   @extend .z-depth-2;
   display: flex;
   width: 100%;
   z-index: 100000;
+  position: relative;
 
   @include prefix((
     align-items: center,
@@ -14,13 +17,50 @@
     height: auto;
     padding: 1em;
   }
+
   .search-tags{
     margin: 0.5em auto;
     width: 100%;
     max-width: 300px;
     input{
       padding: 0em;
-      line-height: 1.5;
+      line-height: 1.25;
+    }
+  }
+  @media #{$phone} {
+    a{
+      display: block;
+      height: 100%;
+      position: absolute;
+      top: 0;
+      left: 0;
+      z-index: 1000000;
+    }
+    img{
+      padding: 0em;
+      width: auto;
+      height: 32px;
+      display: block;
+      position: relative;
+      margin-top: -50%;
+      top: 50%;
+      margin-left: 10px;
+    }
+    .search-tags{
+      max-width: 2000px;
+      width: 100%;
+      margin: 0;
+      input{
+        padding: 1em;
+        line-height: 1;
+        font-size: 18px;
+      }
+      input[type="search"]::-webkit-search-decoration,
+      input[type="search"]::-webkit-search-cancel-button,
+      input[type="search"]::-webkit-search-results-button,
+      input[type="search"]::-webkit-search-results-decoration {
+        // @include prefix((appearance: none));
+      }
     }
   }
 }
@@ -31,15 +71,59 @@
   padding-top: 1em;
   position: relative;
   z-index: 10000;
+  text-align: center;
 
   .loader{
     padding: 0;
     margin: 0.5em auto 1em auto;
     display: block;
-    @include prefix((align-self: center ));
     height: 30px;
     width: 30px;
   }
 }
 
+@media #{$phone} {
+  .top-bar{
+    top: 0;
+    width: 100%;
+  }
+  .tag .popular-tags {
+    .chip{
+      font-size: 12px;
+      font-weight: initial;
+    }
+  }
+}
+
 .tag{.left-column, .right-column{ text-align: center;}}
+.tag .left-column{ background-color: $red;}
+.tag .right-column{ background-color: $grey7;}
+
+
+.tag-column-switcher{
+  // width: 80%;
+  margin: 0 auto;
+  padding: 1em;
+  border-radius: 1000px;
+  display: flex;
+  @include prefix((
+    align-items: center,
+    align-content: center,
+  ));
+
+  .l{border-right: 1px solid $grey1;}
+  .r{border-left: 1px solid $grey1;}
+  .l, .r{
+    background-color: $grey2;
+    width: 50%;
+    text-align: center;
+    padding: 1em;
+    margin: auto;
+    display: block;
+    &.active{
+      background-color: $red;
+      color: white;
+    }
+  }
+
+}
