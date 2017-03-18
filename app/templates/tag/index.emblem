@@ -1,1 +1,27 @@
 
+= top-bar selected=model.tag onTagSelect="onTagSelect"
+
+= popular-tags onTagSelect="onTagSelect" selected=model.tag
+
+
+= liquid-spacer
+  .entries
+    .left-column
+      = liquid-bind model.left as |leftEntries|
+        = each leftEntries as |leftEntry|
+          p
+            img src=leftEntry.permalink_url
+          p
+            = leftEntry.side
+          p
+            = leftEntry.id
+    .right-column
+      = liquid-bind model.right as |rightEntries|
+
+        = each rightEntries as |rightEntry|
+          p
+            img src=rightEntry.permalink_url
+          p
+            = rightEntry.side
+          p
+          = rightEntry.id

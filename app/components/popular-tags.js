@@ -7,19 +7,18 @@ import RSVP from 'rsvp';
 export default Component.extend({
   classNames:         ['popular-tags'],
   store:              injectService('store'),
-
+  selected:           null,
 
 
   fetchPopularTags:   task(function*(){
-    yield timeout(2000);
+    yield timeout(0);
     let popularTags = yield this.queryTags();
     this.set('popularTags', popularTags);
   }),
 
-
   queryTags(){
     return new RSVP.Promise((resolve, reject)=>{
-      this.get('store').findAll('popular-tag').then((tags)=>{
+      this.get('store').query('tag',{SUB_TYPE: 'popular'}).then((tags)=>{
         resolve(tags.toArray());
       }, reject);
     });

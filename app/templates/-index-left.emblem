@@ -1,6 +1,6 @@
 .container
   = partial "logo"
 
-  = search-tags onTagSelect="onTagSelect"
+  = search-tags onTagSelect="onTagSelect" selected=selected
 
-  = popular-tags onTagSelect="onTagSelect"
+  = popular-tags onTagSelect="onTagSelect" searchText="Lade Tags…" selected=selected

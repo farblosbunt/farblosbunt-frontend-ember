@@ -1,12 +1,24 @@
 import Component from 'ember-component';
 import injectService from 'ember-service/inject';
 import {task, timeout} from 'ember-concurrency';
-import {isEmpty} from 'ember-utils';
+import {isEmpty, isNone} from 'ember-utils';
+import computed from 'ember-computed';
 const DEBOUNCE = 250;
 
 export default Component.extend({
   classNames:         ['search-tags'],
   store:              injectService('store'),
+
+  selected:           null,
+
+  placeholder:        computed('selected', function(){
+    let selected = this.get('selected');
+    if(isNone(selected)){
+      return "SUCHEN";
+    }else {
+      return selected.get('label');
+    }
+  }),
 
   searchTagsTask:     task(function*(query){
     if(isEmpty(query)){ return [];}
@@ -27,6 +39,7 @@ export default Component.extend({
 
   actions:{
     selectTag(tag){
+      this.set('selected', tag);
       this.sendAction('onTagSelect', tag);
     }
   }

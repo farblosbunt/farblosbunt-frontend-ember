@@ -7,8 +7,18 @@ export default function(server) {
     Make sure to define a factory for each model you want to create.
   */
 
-  // server.createList('post', 10);
+  for (var i = 0; i < 20; i++) {
+    let tag = server.create('tag');
+    let rightEntries = server.createList('entry', Math.floor(Math.random() * 10 + 10), {
+      tag_id: tag.id,
+      side: 'right'
+    });
 
-  server.createList('tag', 20);
-  server.createList('entry', 200);
+    let leftEntries = server.createList('entry', Math.floor(Math.random() * 10 + 10), {
+      tag_id: tag.id,
+      side: 'left'
+    });
+
+    tag.entries = [].concat.apply([], leftEntries, rightEntries);
+  }
 }

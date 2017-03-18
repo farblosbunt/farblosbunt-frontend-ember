@@ -24,21 +24,28 @@ export default function() {
   this.get('/tags/:id');
 
   this.get('/popular-tags',(schema)=>{
-    let result = schema.tags.where((tag)=>{
-      return [1,2,3,4,5,6].includes(parseInt(tag.id));
-    });
-    result.modelName = "popularTag";
-    result.models.map((mdl)=>{
-      mdl.modelName = "popularTag";
-      return mdl;
-    });
-    return result;
+    return schema.tags.find([
+      Math.ceil(1 + Math.random()* 10),
+      Math.ceil(1 + Math.random()* 10),
+      Math.ceil(1 + Math.random()* 10),
+      Math.ceil(1 + Math.random()* 10)
+    ].uniq());
   });
 
 
-  this.get('entries',(schema)=>{
-    return schema.entries.all();
-  });
+  function getEntryForSide(side){
+    this.get(`${side}-entries`, (schema, request)=>{
+      let tagId = request.queryParams.tag_id;
+      if(!tagId){return {};}
+      let tag = schema.tags.find(parseInt(tagId));
+      return schema.entries.where({tag_id: tag.id, side: side});
+    });
+  }
+
+  getEntryForSide.call(this, 'right');
+  getEntryForSide.call(this, 'left');
+
+
 
   /*
     Shorthand cheatsheet:

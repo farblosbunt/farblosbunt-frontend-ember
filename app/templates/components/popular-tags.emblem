@@ -1,7 +1,8 @@
-= liquid-if fetchPopularTags.isRunning
-  p Lade Tags…
+= liquid-if fetchPopularTags.isRunning class="popular-tags-conditional"
+  = if searchText
+    p
+      = searchText
   = partial "loader"
 = else
   = each popularTags as |tag|
-    .chip click="'selectTag' tag"
-      =tag.label
+    = tag-chip tag=tag onSelect="selectTag" selected=selected
