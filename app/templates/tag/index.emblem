@@ -7,14 +7,14 @@
   = unless showBoth
     = tag-column-switcher showRight=showRight
 
-= liquid-spacer growWidth=false
-  .entries
-    = liquid-if showBoth
-      = partial "tag/left-column"
-      = partial "tag/right-column"
 
+.entries
+  = liquid-if showBoth
+    = partial "tag/left-column"
+    = partial "tag/right-column"
+
+  = else
+    = liquid-if showRight class="tag-show-right-column"
+      = partial "tag/right-column"
     = else
-      = liquid-if showRight class="tag-show-right-column"
-        = partial "tag/right-column"
-      = else
-        = partial "tag/left-column"
+      = partial "tag/left-column"

@@ -17,12 +17,12 @@ export default function(){
 
   this.transition(
     this.childOf('.right-column'),
-    this.use('crossFade',{duration: 400})
+    this.use('crossFade',{duration: 600})
   );
 
   this.transition(
     this.childOf('.left-column'),
-    this.use('crossFade',{duration: 400})
+    this.use('crossFade',{duration: 600})
   );
 
   this.transition(

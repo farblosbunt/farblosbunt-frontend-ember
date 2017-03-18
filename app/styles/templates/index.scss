@@ -1,5 +1,5 @@
 .left-column, .right-column{
-  height: 100vh;
+  min-height: 100vh;
   @include center-horizontal;
   @include center-vertical;
   width: calc(50% - 0px);
