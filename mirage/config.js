@@ -24,12 +24,7 @@ export default function() {
   this.get('/tags/:id');
 
   this.get('/popular-tags',(schema)=>{
-    return schema.tags.find([
-      Math.ceil(1 + Math.random()* 10),
-      Math.ceil(1 + Math.random()* 10),
-      Math.ceil(1 + Math.random()* 10),
-      Math.ceil(1 + Math.random()* 10)
-    ].uniq());
+    return schema.tags.find([1,2,3,4,5]);
   });
 
 
