@@ -20,6 +20,13 @@ export default Component.extend({
     }
   }),
 
+  selectedLabel: computed('selected.label', {
+    get(){ return this.get('selected.label');},
+    set(k, v){
+      return v;
+    }
+  }),
+
   searchTagsTask:     task(function*(query){
     if(isEmpty(query)){ return [];}
     yield timeout(DEBOUNCE);
@@ -41,6 +48,12 @@ export default Component.extend({
     selectTag(tag){
       this.set('selected', tag);
       this.sendAction('onTagSelect', tag);
+    },
+    clearSelection(){
+      this.set('selectedLabel', '');
+    },
+    resetSelection(){
+      this.set('selectedLabel', this.get('selected.label'))
     }
   }
 });
