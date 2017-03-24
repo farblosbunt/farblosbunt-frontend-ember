@@ -1,0 +1,5 @@
+.static-links
+  = link-to "privacy"
+    |Datenschutzerklärung
+  = link-to "imprint"
+    |Impressum

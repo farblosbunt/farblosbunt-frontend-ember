@@ -11,8 +11,8 @@ Router.map(function() {
   this.route('tag', {path:'t/:tag_id', resetNamespace: true}, function(){
     this.route('index', {path: '/'});
   });
-  this.route('privacy');
-  this.route('terms');
+  this.route('privacy', {path: 'datenschutz'});
+  this.route('imprint', {path: 'impressum'});
 });
 
 export default Router;

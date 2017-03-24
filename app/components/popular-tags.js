@@ -11,7 +11,7 @@ export default Component.extend({
 
 
   fetchPopularTags:   task(function*(){
-    yield timeout(1500);
+    yield timeout(500);
     let popularTags = yield this.queryTags();
     this.set('popularTags', popularTags);
   }),

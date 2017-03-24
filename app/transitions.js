@@ -37,4 +37,16 @@ export default function(){
     this.use('toRight'),
     this.reverse('toLeft')
   );
+
+  this.transition(
+    this.toRoute(['imprint','privacy']),
+    this.use('toDown'),
+    this.reverse('toUp')
+  );
+
+  this.transition(
+    this.fromRoute(['imprint','privacy']),
+    this.toRoute(['imprint','privacy']),
+    this.use('crossFade')
+  );
 }
