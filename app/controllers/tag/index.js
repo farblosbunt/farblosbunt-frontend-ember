@@ -25,6 +25,14 @@ export default Controller.extend({
     onTagSelect(tag){
       this.get('indexController').set('selected', tag);
       this.transitionToRoute('tag', tag.id);
+    },
+    showLeftEntries(){
+      this.set('showBoth', false);
+      this.set('showRight', false);
+    },
+    showRightEntries(){
+      this.set('showBoth', false);
+      this.set('showRight', true);
     }
   }
 });

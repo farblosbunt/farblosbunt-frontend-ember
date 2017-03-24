@@ -1,9 +1,0 @@
-.right-column
-  = liquid-bind model.right as |rightEntries|
-    = each rightEntries as |rightEntry|
-      p
-        img src=rightEntry.permalink_url
-      p
-        = rightEntry.side
-      p
-      = rightEntry.id

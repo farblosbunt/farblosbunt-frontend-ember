@@ -10,11 +10,11 @@
 
 .entries
   = liquid-if showBoth
-    = partial "tag/left-column"
-    = partial "tag/right-column"
+    = entries-column side="left" model=model.left
+    = entries-column side="right" model=model.right
 
   = else
     = liquid-if showRight class="tag-show-right-column"
-      = partial "tag/right-column"
+      = entries-column side="right" model=model.right onwiperight="showLeftEntries"
     = else
-      = partial "tag/left-column"
+      = entries-column side="left" model=model.left onwipeleft="showRightEntries"
