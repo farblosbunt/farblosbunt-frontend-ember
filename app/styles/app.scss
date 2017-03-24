@@ -1,4 +1,5 @@
 @import "colors";
+@import "variables";
 @import "bourbon";
 @import "neat";
 @import "mixins";
@@ -7,13 +8,3 @@
 
 @import "templates";
 @import "partials/loader";
-
-.row{
-  @include grid-container;
-}
-
-@for $i from 1 through 12{
-  .col#{$i}{
-    @include grid-column($i);
-  }
-}

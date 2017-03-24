@@ -4,9 +4,10 @@
 
 @for $i from 1 through 12{
   .col#{$i}{
-    @include grid-column($i);
+    @include grid-column($i, $neat-grid);
   }
 }
+
 
 
 body, html{
