@@ -9,7 +9,7 @@ export default function() {
 
   // index
   this.get('/tags',(schema, {queryParams})=>{
-    if(!!queryParams.query){
+    if(queryParams.query){
       let queryLabel = queryParams.query.toLowerCase();
       return schema.tags.where((tag)=>{
         let tagLabel = tag.label.toLowerCase();

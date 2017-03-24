@@ -14,7 +14,8 @@ echo "${GREEN}Running FarblosBunt Bootstrap Specialized v1.0 (2017-03-14)${NOCOL
 
 
 installDependencyWithNpmGlobally(){
-  npm ls $1 --parseable=true --global=true || npm install -g $1 || echo "${RED} FAILED TO INSTALL $1 ${NOCOLOR}";
+  echo "${GREEN} INSTALLING $1 ${NOCOLOR}"
+  yarn global ls $1 || npm install -g $1 || echo "${RED} FAILED TO INSTALL $1 ${NOCOLOR}";
 }
 
 
