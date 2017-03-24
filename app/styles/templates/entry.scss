@@ -1,0 +1,26 @@
+.news-entry {
+  @extend .z-depth-1;
+  &:hover{@extend .z-depth-3;}
+  display: block;
+  margin: 4em auto;
+  width: 90%;
+  max-width: 500px;
+  min-height: 400px;
+  text-decoration: none;
+
+
+  .hero{
+    .hero-img{ width: 100%;}
+
+    .hero-title{
+      color: white;
+      font-size: 24px;
+      text-align: center;
+    }
+  }
+
+  .info{
+    color: white;
+    padding: 5%;
+  }
+}

@@ -1,8 +1,4 @@
 = liquid-bind model as |entries|
   = each entries as |entry|
-    p
-      img src=entry.permalink_url
-    p
-      = entry.side
-    p
-    = entry.id
+    = news-entry model=entry
+    

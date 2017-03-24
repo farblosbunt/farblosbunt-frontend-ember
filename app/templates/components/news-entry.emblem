@@ -1,0 +1,19 @@
+.hero
+  img.hero-img src=imageSrc
+  h2.hero-title
+    = model.caption
+
+.info
+  .created_at
+    = model.created_time
+  .description
+    = model.description
+    = model.message
+    = model.story
+
+  = model.icon
+  = model.name
+  = model.picture
+  = model.source
+  = model.type
+  = model.updated_time

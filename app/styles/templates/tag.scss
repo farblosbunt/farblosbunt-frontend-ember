@@ -99,6 +99,12 @@
 .tag .left-column{ background-color: $red;}
 .tag .right-column{ background-color: $grey7;}
 
+.tag{
+  .left-column, .right-column{
+    @include grid-media((columns: 12, gutter: 0px, media: 0px)){@include grid-column(12);}
+    @include grid-media((columns: 12, gutter: 0px, media: 640px)){@include grid-column(6);}
+  }
+}
 
 .tag-column-switcher{
   // width: 80%;
