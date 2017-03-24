@@ -7,10 +7,13 @@ module.exports = function(defaults) {
     require("bourbon").includePaths,
     require("bourbon-neat").includePaths
   ];
-
   let app = new EmberApp(defaults, {
     sassOptions:{
       includePaths: [].concat.apply([], includePaths)
+    },
+    autoprefixer: {
+      browsers: require('./config/targets').browsers,
+      cascade: false
     }
   });
 
