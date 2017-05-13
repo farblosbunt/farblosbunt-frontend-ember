@@ -1,9 +1,7 @@
 import { Factory, faker } from 'ember-cli-mirage';
 
 export default Factory.extend({
-  side(i){return i % 0 ? 'right' : 'left';},
-
-  permalink_url(){ return faker.internet.avatar();},
+  political_score(){ return Math.random() * 10 - 5;},
 
   caption(){
     let arr = [
@@ -14,7 +12,7 @@ export default Factory.extend({
 
   created_time(){
     let arr = [
-      null,
+      faker.date.past(0.2),
       faker.date.recent()];
     return arr[Math.floor(Math.random()*arr.length)]
   },
@@ -31,6 +29,10 @@ export default Factory.extend({
       null,
       faker.image.image()];
     return arr[Math.floor(Math.random()*arr.length)]
+  },
+
+  page_title(){
+    return faker.company.catchPhrase();
   },
 
   link(){

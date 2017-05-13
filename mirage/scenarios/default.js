@@ -9,12 +9,12 @@ export default function(server) {
 
     let rightEntries = server.createList('entry', Math.floor(Math.random() * 10 + 10), {
       tag_id: tag.id,
-      side: 'right'
+      political_score: Math.random() * 100
     });
 
     let leftEntries = server.createList('entry', Math.floor(Math.random() * 10 + 10), {
       tag_id: tag.id,
-      side: 'left'
+      political_score: Math.random() * -100
     });
 
     tag.entries = [].concat.apply([], leftEntries, rightEntries);

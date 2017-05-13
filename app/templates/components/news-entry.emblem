@@ -1,19 +1,19 @@
-.hero
-  img.hero-img src=imageSrc
-  h2.hero-title
+.from
+  .container
+    img src=model.picture
+  .container
+    .title
+      = model.page_title
+    .date
+      = moment-from-now model.createdAt
+
+  .link
+    a href=model.permalink_url
+      |F
+
+.media
+  .container
+    img src=imageSrc
+  .title
     = model.caption
-
-.info
-  .created_at
-    = model.created_time
   .description
-    = model.description
-    = model.message
-    = model.story
-
-  = model.icon
-  = model.name
-  = model.picture
-  = model.source
-  = model.type
-  = model.updated_time

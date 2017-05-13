@@ -10,6 +10,10 @@ module.exports = function(environment) {
     apiHost:              '',
     apiNamespace:         '',
 
+    moment: {
+      includeLocales: ['de']
+    },
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build

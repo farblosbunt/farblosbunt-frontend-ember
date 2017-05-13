@@ -4,7 +4,8 @@ import computed from 'ember-computed';
 
 export default Model.extend({
   permalink_url:        attr('string'),
-  side:                 attr('string'),
+  political_score:      attr('string'),
+  page_title:           attr('string'),
 
 
   caption:              attr('string'),
@@ -21,8 +22,9 @@ export default Model.extend({
   updated_time:         attr('date'),
 
 
+  createdAt:            computed.alias('created_time'),
 
-  // subject to change
-  imageUrl:             computed.readOnly('picture'),
-  title:                computed.readOnly('side'),
+  side:                 computed('political_score', function(){
+    return this.get('political_score') >= 0 ? 'left' : 'right';
+  })
 });

@@ -1,26 +1,47 @@
 .news-entry {
   @extend .z-depth-1;
-  &:hover{@extend .z-depth-3;}
-  display: block;
-  margin: 4em auto;
-  width: 90%;
-  max-width: 500px;
-  min-height: 400px;
-  text-decoration: none;
+  &:hover{@extend .z-depth-2;}
 
+  display:          block;
+  margin:           4em auto;
+  width:            90%;
+  max-width:        500px;
+  height:           610px;
+  text-decoration:  none;
+  overflow:         hidden;
+  background-color: white;
 
-  .hero{
-    .hero-img{ width: 100%;}
+  .from{
+    display: flex;
+    align-items: flex-start;
+    padding: 1em;
 
-    .hero-title{
-      color: white;
-      font-size: 24px;
-      text-align: center;
+    .container{
+      padding: 0;
+      margin: 0;
+      margin-right: 1em;
+    }
+
+    .title {
+      font-size: 1.2em;
+      font-weight: lighter;
+    }
+    .date{
+      text-align: initial;
+      text-align: left;
+    }
+
+    img{
+      @extend .z-depth-2;
+      width: 64px;
+      height: 64px;
+      border-radius: 4px;
+    }
+
+    .link{
+      margin-left: auto;
     }
   }
 
-  .info{
-    color: white;
-    padding: 5%;
-  }
+
 }

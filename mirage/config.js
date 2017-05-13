@@ -1,7 +1,7 @@
 import Config from 'farblosbunt-frontend-ember/config/environment';
 
 export default function() {
-  this.timing = 500;      // delay for each request, automatically set to 0 during testing
+  this.timing = 1;      // delay for each request, automatically set to 0 during testing
 
   this.urlPrefix = Config.apiHost;
   this.namespace = Config.apiNamespace;
@@ -33,17 +33,22 @@ export default function() {
   });
 
 
-  function getEntryForSide(side){
+  function getEntryForSide(side, sMin, sMax){
     this.get(`${side}-entries`, (schema, request)=>{
       let tagId = request.queryParams.tag_id;
       if(!tagId){return {};}
       let tag = schema.tags.find(tagId);
-      return schema.entries.where({tag_id: tag.id, side: side});
+      return schema.entries.where((el)=>{
+        let a = el.tag_id === tag.id;
+        let b = el.political_score >= sMin;
+        let c = el.political_score <= sMax;
+        return a && b && c;
+      });
     });
   }
 
-  getEntryForSide.call(this, 'right');
-  getEntryForSide.call(this, 'left');
+  getEntryForSide.call(this, 'right', -100, 0);
+  getEntryForSide.call(this, 'left', 0, 100);
 
 
 
