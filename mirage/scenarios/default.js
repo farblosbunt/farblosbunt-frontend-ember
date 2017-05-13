@@ -1,14 +1,12 @@
 export default function(server) {
+  server.loadFixtures();
 
-  /*
-    Seed your development database using your factories.
-    This data will not be loaded in your tests.
 
-    Make sure to define a factory for each model you want to create.
-  */
+  let tags = server.schema.tags.all();
 
   for (var i = 0; i < 20; i++) {
-    let tag = server.create('tag');
+    let tag = tags.models[Math.floor(tags.length * Math.random())];
+
     let rightEntries = server.createList('entry', Math.floor(Math.random() * 10 + 10), {
       tag_id: tag.id,
       side: 'right'

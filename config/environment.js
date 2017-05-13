@@ -2,10 +2,14 @@
 
 module.exports = function(environment) {
   var ENV = {
-    modulePrefix: 'farblosbunt-frontend-ember',
-    environment: environment,
-    rootURL: '/',
-    locationType: 'auto',
+    modulePrefix:         'farblosbunt-frontend-ember',
+    environment:          environment,
+    rootURL:              '/',
+    locationType:         'auto',
+
+    apiHost:              '',
+    apiNamespace:         '',
+
     EmberENV: {
       FEATURES: {
         // Here you can enable experimental features on an ember canary build
@@ -43,7 +47,7 @@ module.exports = function(environment) {
   }
 
   if (environment === 'production') {
-    // 
+    //
   }
 
   return ENV;

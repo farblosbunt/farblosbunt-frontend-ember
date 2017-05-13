@@ -20,8 +20,8 @@ export default Component.extend({
     }
   }),
 
-  selectedLabel: computed('selected.label', {
-    get(){ return this.get('selected.label');},
+  selectedLabel: computed('selected.word', {
+    get(){ return this.get('selected.word');},
     set(k, v){
       return v;
     }
@@ -31,7 +31,9 @@ export default Component.extend({
     if(isEmpty(query)){ return [];}
     yield timeout(DEBOUNCE);
     let results = yield this.tagsForQuery(query);
-    return results;
+    return results.toArray().sort((a,b)=>{
+      return b.get('weight') - a.get('weight');
+    });
   }).restartable(),
 
 
@@ -53,7 +55,7 @@ export default Component.extend({
       this.set('selectedLabel', '');
     },
     resetSelection(){
-      this.set('selectedLabel', this.get('selected.label'))
+      this.set('selectedLabel', this.get('selected.word'))
     }
   }
 });
